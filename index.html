@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação Continuada 2026.1 | Consulta de Salas</title>
+    <meta
+      name="description"
+      content="Consulte sua sala de provas da Avaliação Continuada 2026.1 da Estácio."
+    />
+    <link rel="icon" type="image/png" href="./assets/logo-estacio.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="hero" aria-labelledby="page-title">
+        <header class="hero__header">
+          <img
+            class="hero__logo"
+            src="./assets/logo-estacio.png"
+            alt="Logo da Estácio"
+            width="88"
+            height="88"
+          />
+          <p class="hero__eyebrow">Consulta oficial de salas</p>
+          <h1 id="page-title">Avaliação Continuada 2026.1</h1>
+          <p class="hero__description">
+            Informe seu número de matrícula aqui e saiba sua sala de provas
+          </p>
+        </header>
+
+        <section class="search-panel" aria-labelledby="search-title">
+          <div class="search-panel__heading">
+            <h2 id="search-title">Consulta rápida</h2>
+            <p>
+              Busque por matrícula ou por nome. Para nome, informe pelo menos
+              3 caracteres.
+            </p>
+          </div>
+
+          <form id="search-form" class="search-form" novalidate>
+            <div class="field-group">
+              <label for="search-input">Matrícula ou nome</label>
+              <input
+                id="search-input"
+                name="search"
+                type="text"
+                inputmode="search"
+                autocomplete="off"
+                placeholder="Ex.: 202602203871 ou Ana Patricia"
+                aria-describedby="search-help search-feedback"
+              />
+              <span id="search-help" class="field-help">
+                A matrícula pode ser digitada com pontos, traços ou espaços.
+              </span>
+            </div>
+
+            <div class="field-group field-group--compact">
+              <label for="room-filter">Filtrar por sala</label>
+              <select id="room-filter" name="room">
+                <option value="Todas">Todas</option>
+                <option value="E101">E101</option>
+                <option value="E102">E102</option>
+                <option value="E103">E103</option>
+                <option value="E104">E104</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="button button--primary">
+                Buscar
+              </button>
+              <button type="button" id="clear-button" class="button button--ghost">
+                Limpar busca
+              </button>
+            </div>
+
+            <p id="search-feedback" class="search-feedback" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section
+          id="results-section"
+          class="results"
+          aria-live="polite"
+          aria-labelledby="results-title"
+        >
+          <div class="results__header">
+            <h2 id="results-title">Resultado da consulta</h2>
+          </div>
+          <div id="results-container" class="results__grid"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Consulta de salas | Avaliação Continuada 2026.1</p>
+      </footer>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
